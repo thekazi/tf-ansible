@@ -1,0 +1,1 @@
+Terraform to provision infrastructure (e.g., a virtual machine or cloud instance) and then use Ansible to configure that infrastructure. This will create a complete Infrastructure as Code (IaC) pipeline using Jenkins, Terraform, and Ansible.
