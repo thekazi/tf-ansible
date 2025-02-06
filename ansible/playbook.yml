@@ -1,0 +1,21 @@
+- name: Configure Nginx Container
+  hosts: all
+  become: yes
+  tasks:
+    - name: Ensure Nginx is running
+      uri:
+        url: "http://localhost:8080"
+        method: GET
+        status_code: 200
+    - name: Create a sample HTML file
+      copy:
+        content: |
+          <html>
+            <body>
+              <h1>Hello from Ansible!</h1>
+            </body>
+          </html>
+        dest: /usr/share/nginx/html/index.html
+        owner: www-data
+        group: www-data
+        mode: '0644'
